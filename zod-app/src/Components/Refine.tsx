@@ -1,6 +1,6 @@
 import { log } from 'console'
 import { useState } from 'react'
-import {z} from 'zod'
+import {string, z} from 'zod'
 
 
 async function checkUsenameAvailability(username : string):Promise<boolean> {
@@ -36,11 +36,27 @@ const Refine = () => {
         console.log(err);
         
      }
+
+     
+     const UserAccSchema = z.object({
+        username:z.string()
+        .min(3 , 'Please Enter Username greater than 3 characters')
+        .default('default_user'),
+
+        password: z.string()
+        .min(7 , 'Password length invalid')
+    }).merge(z.object({name : z.string()}))
+    
+    console.log(UserAccSchema.pick({username : true }));
     
 
     
 
-    console.log(UserNameSchema.parse('asdasdd'));
+    console.log(UserAccSchema.parse({
+        username: 'sahiltuladhar',
+        password : '12343414',
+        name : 'sahil'
+    }));
     
   
 
