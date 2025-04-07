@@ -8,6 +8,7 @@ import Literal from './Components/Literal';
 import Refine from './Components/Refine';
 import Email from './Components/Email';
 import SuperRefine from './Components/SuperRefine';
+import Login from './Pages/Login';
 
 
 
@@ -21,9 +22,10 @@ function App() {
        <PrimitiveType />
        <Coercion />
        <Literal /> */}
-       <Refine />
+       {/* <Refine /> */}
        {/* <Email />
        <SuperRefine /> */}
+       <Login />
       </header>
     </div>
   );
