@@ -101,7 +101,13 @@
     padding: 7px;
     justify-content: center;
     align-items: center;
+    transition: 1s background-color ease;
    
+}
+
+.otherButtons button:hover{
+    cursor: pointer;
+    background-color: #3C364C;
 }
 
 .optionImgCover{
@@ -126,6 +132,10 @@
     flex: 2.5;
 }
 
+.errorMsg{
+    color: red;
+    font-size: 10px;
+}
 
 h2{
     font-weight: 400;
